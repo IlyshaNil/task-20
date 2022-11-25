@@ -14,13 +14,12 @@ RUN apk --update add \
     curl -sS https://getcomposer.org/installer | php -- \
     --install-dir=/usr/local/bin --filename=composer && \
     mkdir -p /var/www/html/ && chown -R apache:apache /var/www/html
-RUN ["chmod", "+x", "/opt/entrypoint.sh"]
 
 COPY src/ /var/www/html/
 COPY etc/apache2/ /etc/apache2/
 COPY etc/php/php.ini /etc/php7/php.ini
 COPY scripts/entrypoint.sh /opt/entrypoint.sh
-
+RUN ["chmod", "+x", "/opt/entrypoint.sh"]
 WORKDIR /var/www/html/
 ENTRYPOINT [ "/opt/entrypoint.sh" ]
 

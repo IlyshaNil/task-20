@@ -1,10 +1,10 @@
 [
     {
-      "name": "task-21-prod-apache",
+      "name": "apache",
       "imageUri": "314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:apache-app-latest"
     },
     {
-      "name": "task-21-prod",
+      "name": "nginx",
       "imageUri": "314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:nginx-app-latest"
     }
-  ]
+]

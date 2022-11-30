@@ -28,15 +28,15 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t $ECR_REPO_NAME-nginx:$ECR_IMAGE_TAG /nginx
-      - docker build -t $ECR_REPO_NAME-apche:$ECR_IMAGE_TAG /apache
-      - docker tag $ECR_REPO_NAME-nginx:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME-nginx:$ECR_IMAGE_TAG
-      - docker tag $ECR_REPO_NAME-apache:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME-apache:$ECR_IMAGE_TAG
+      - docker build -t task-21-nginx:$ECR_IMAGE_TAG /nginx
+      - docker build -t task-21-apche:$ECR_IMAGE_TAG /apache
+      - docker tag task-21-nginx:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-nginx:$ECR_IMAGE_TAG
+      - docker tag task-21-apache:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-apache:$ECR_IMAGE_TAG
       
 
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME-nginx:$ECR_IMAGE_TAG
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO_NAME-apache:$ECR_IMAGE_TAG
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-nginx:$ECR_IMAGE_TAG
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-apache:$ECR_IMAGE_TAG
       

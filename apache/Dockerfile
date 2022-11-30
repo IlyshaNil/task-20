@@ -1,4 +1,4 @@
-FROM httpd:alpine
+FROM 314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:httpd-alpine
 
 RUN apk update && apk upgrade && \
     apk add --no-cache --upgrade bash && \

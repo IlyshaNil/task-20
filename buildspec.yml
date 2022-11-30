@@ -28,8 +28,8 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t task-21-nginx:$ECR_IMAGE_TAG /nginx
-      - docker build -t task-21-apche:$ECR_IMAGE_TAG /apache
+      - docker build -t task-21-nginx:latest nginx
+      - docker build -t task-21-apche:latest apache
       - docker tag task-21-nginx:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-nginx:$ECR_IMAGE_TAG
       - docker tag task-21-apache:$ECR_IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/task-21-apache:$ECR_IMAGE_TAG
       

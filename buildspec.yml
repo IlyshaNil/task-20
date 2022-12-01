@@ -28,16 +28,16 @@ phases:
     commands:
       - echo Building the Docker image...
       - docker build -t task-21-nginx:latest nginx
-      - docker build -t task-21-apache:latest apache
+      
       - docker tag task-21-nginx:latest 314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:nginx-app-latest
-      - docker tag task-21-apache:latest 314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:apache-app-latest
+      
       
 
   post_build:
     commands:
       - echo Pushing the Docker image...
       - docker push 314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:nginx-app-latest
-      - docker push 314682408916.dkr.ecr.us-east-1.amazonaws.com/task-21:apache-app-latest
+      
 
 artifacts:
     files: imagedefinitions.json
